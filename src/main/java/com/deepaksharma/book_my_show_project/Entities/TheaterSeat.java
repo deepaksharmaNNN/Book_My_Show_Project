@@ -21,4 +21,8 @@ public class TheaterSeat {
 
     private SeatType seatType;
 
+    @JoinColumn
+    @ManyToOne
+    private Theater theater;
+
 }

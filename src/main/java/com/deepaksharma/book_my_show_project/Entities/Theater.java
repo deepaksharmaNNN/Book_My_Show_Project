@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,5 +24,10 @@ public class Theater {
     private String address;
 
     private Integer noOfScreens;
+
+    @OneToMany(mappedBy = "theater", cascade = CascadeType.ALL)
+    private List<TheaterSeat> theaterSeats = new ArrayList<>();
+
+
 
 }
