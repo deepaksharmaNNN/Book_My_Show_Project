@@ -8,6 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -33,5 +35,6 @@ public class Movie {
 
     private Double duration;
 
-
+    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
+    private List<Show> showList = new ArrayList<>();
 }

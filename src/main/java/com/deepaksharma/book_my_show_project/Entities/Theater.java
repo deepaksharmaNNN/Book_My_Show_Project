@@ -26,8 +26,9 @@ public class Theater {
     private Integer noOfScreens;
 
     @OneToMany(mappedBy = "theater", cascade = CascadeType.ALL)
-    private List<TheaterSeat> theaterSeats = new ArrayList<>();
+    private List<TheaterSeat> theaterSeatsList = new ArrayList<>();
 
-
+    @OneToMany(mappedBy = "theater", cascade = CascadeType.ALL)
+    private List<Show> showList = new ArrayList<>();
 
 }
