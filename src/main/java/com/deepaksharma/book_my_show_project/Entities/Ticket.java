@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class Ticket {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    //@GeneratedValue(strategy = GenerationType.UUID)
     private Integer ticketId;
 
     private String seatNumbersBooked;
