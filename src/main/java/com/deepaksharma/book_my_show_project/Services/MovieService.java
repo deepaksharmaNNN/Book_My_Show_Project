@@ -15,6 +15,7 @@ public class MovieService {
         Movie movie = Movie.builder()
                 .movieName(addMovieRequest.getMovieName())
                 .genre(addMovieRequest.getGenre())
+                .rating(addMovieRequest.getRating())
                 .language(addMovieRequest.getLanguage())
                 .releaseDate(addMovieRequest.getReleaseDate())
                 .duration(addMovieRequest.getDuration())

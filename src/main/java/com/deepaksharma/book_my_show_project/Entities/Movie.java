@@ -30,6 +30,8 @@ public class Movie {
     @Enumerated(value = EnumType.STRING)
     private Genre genre;
 
+    private double rating;
+
     @Enumerated(value = EnumType.STRING)
     private Language language;
 

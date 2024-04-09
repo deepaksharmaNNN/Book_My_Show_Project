@@ -11,6 +11,7 @@ public class AddMovieRequest {
     private String movieName;
 
     private Genre genre;
+    private double rating;
 
     private Language language;
 
