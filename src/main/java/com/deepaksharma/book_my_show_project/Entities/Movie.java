@@ -20,8 +20,8 @@ import java.util.List;
 @Table(name = "movies")
 public class Movie {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String movieId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer movieId;
 
 
     @Column(unique = true, nullable = false, length = 100)
