@@ -35,4 +35,6 @@ public class Show {
     @OneToMany(mappedBy = "show", cascade = CascadeType.ALL)
     private List<ShowSeat> showSeatsList = new ArrayList<>();
 
+    @OneToMany(mappedBy = "show", cascade = CascadeType.ALL)
+    private List<Ticket> tickets = new ArrayList<>();
 }
