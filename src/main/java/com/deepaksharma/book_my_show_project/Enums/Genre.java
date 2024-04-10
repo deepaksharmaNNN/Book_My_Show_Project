@@ -14,7 +14,7 @@ public enum Genre {
     POLITICAL,
     ROMANCE,
     SATIRE,
-    SCIENCE_FICTION,
     THRILLER,
-    WESTERN
+    WESTERN,
+    SCIENCE_FICTION
 }

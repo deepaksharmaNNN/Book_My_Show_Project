@@ -14,7 +14,7 @@ public class TheaterService {
     private TheaterRepository theaterRepository;
 
     public String addTheater(AddTheaterRequest addTheaterRequest){
-        Theater theater = TheaterTransformer.convertRequestToEntity(addTheaterRequest);
+        Theater theater = TheaterTransformer.convertTheaterRequestToTheaterEntity(addTheaterRequest);
         theaterRepository.save(theater);
         return "Theater added successfully With ID: "+theater.getTheaterId();
     }
