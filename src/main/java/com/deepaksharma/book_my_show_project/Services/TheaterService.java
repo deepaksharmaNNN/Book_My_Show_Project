@@ -93,6 +93,9 @@ public class TheaterService {
                     .build();
             theaterSeatList.add(theaterSeatEntity);
         }
+
+        theater.setTheaterSeatsList(theaterSeatList);
+        theaterRepository.save(theater);
         return "Seats added successfully";
     }
 
