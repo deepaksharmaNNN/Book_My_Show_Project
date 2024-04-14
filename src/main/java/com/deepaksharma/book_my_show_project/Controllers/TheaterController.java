@@ -25,9 +25,9 @@ public class TheaterController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-//    @PostMapping("/addTheaterSeats")
-//    public ResponseEntity<String> addTheaterSeats(@RequestBody AddTheaterSeatsRequest addTheaterSeatsRequest){
-//        String result = theaterService.addTheaterSeats(addTheaterRequest);
-//        return new ResponseEntity<>(result, HttpStatus.OK);
-//    }
+    @PostMapping("/addTheaterSeats")
+    public ResponseEntity<String> addTheaterSeats(@RequestBody AddTheaterSeatsRequest addTheaterSeatsRequest){
+        String result = theaterService.addTheaterSeats(addTheaterSeatsRequest);
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
 }
