@@ -37,4 +37,9 @@ public class Show {
 
     @OneToMany(mappedBy = "show", cascade = CascadeType.ALL)
     private List<Ticket> tickets = new ArrayList<>();
+
+    public Show(LocalDate showDate, LocalTime showTime) {
+        this.showDate = showDate;
+        this.showTime = showTime;
+    }
 }

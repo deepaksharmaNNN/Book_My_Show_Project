@@ -3,6 +3,7 @@ package com.deepaksharma.book_my_show_project.Services;
 import com.deepaksharma.book_my_show_project.CustomException.InvalidMovieException;
 import com.deepaksharma.book_my_show_project.CustomException.InvalidTheaterException;
 import com.deepaksharma.book_my_show_project.Entities.Movie;
+import com.deepaksharma.book_my_show_project.Entities.Show;
 import com.deepaksharma.book_my_show_project.Entities.Theater;
 import com.deepaksharma.book_my_show_project.Repository.MovieRepository;
 import com.deepaksharma.book_my_show_project.Repository.ShowRepository;
@@ -33,6 +34,14 @@ public class ShowService {
         if(theaterOptional.isEmpty()){
             throw new InvalidTheaterException("Theater not found in the database");
         }
+        Theater theater = theaterOptional.get();
+        Show showEntity = new Show(addShowRequest.getShowDate(), addShowRequest.getShowTime());
+        showEntity.setMovie(movie);
+        showEntity.setTheater(theater);
+
+        //For Bidirectional Mapping
+        movie.getShowList().add(showEntity);
+        theater.getShowList().add(showEntity);
         return "Show added successfully";
     }
 }
