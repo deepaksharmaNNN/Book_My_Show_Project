@@ -42,6 +42,7 @@ public class ShowService {
         //For Bidirectional Mapping
         movie.getShowList().add(showEntity);
         theater.getShowList().add(showEntity);
-        return "Show added successfully";
+        showEntity = showRepository.save(showEntity);
+        return "Show added successfully with showId: "+showEntity.getShowId();
     }
 }
