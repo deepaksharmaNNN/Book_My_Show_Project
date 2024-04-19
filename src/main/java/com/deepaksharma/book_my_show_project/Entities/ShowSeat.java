@@ -26,6 +26,7 @@ public class ShowSeat {
 
     private String seatNumber;
     //will get these values from mappings;
+    @Enumerated(value = EnumType.STRING)
     private SeatType seatType;
 
     @JoinColumn

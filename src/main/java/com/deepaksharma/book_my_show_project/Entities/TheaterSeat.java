@@ -20,6 +20,7 @@ public class TheaterSeat {
     private Integer theaterSeatId;
 
     private String seatNumber;
+
     @Enumerated(value = EnumType.STRING)
     private SeatType seatType;
 
