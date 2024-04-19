@@ -6,6 +6,7 @@ import com.deepaksharma.book_my_show_project.Entities.*;
 import com.deepaksharma.book_my_show_project.Enums.SeatType;
 import com.deepaksharma.book_my_show_project.Repository.MovieRepository;
 import com.deepaksharma.book_my_show_project.Repository.ShowRepository;
+import com.deepaksharma.book_my_show_project.Repository.ShowSeatRepository;
 import com.deepaksharma.book_my_show_project.Repository.TheaterRepository;
 import com.deepaksharma.book_my_show_project.RequestDTOs.AddShowRequest;
 import com.deepaksharma.book_my_show_project.RequestDTOs.AddShowSeatsRequest;
@@ -26,6 +27,9 @@ public class ShowService {
 
     @Autowired
     private TheaterRepository theaterRepository;
+
+    @Autowired
+    private ShowSeatRepository showSeatRepository;
 
     public String addShow(AddShowRequest addShowRequest) throws Exception {
         Movie movie = movieRepository.findByMovieName(addShowRequest.getMovieName());
@@ -59,7 +63,7 @@ public class ShowService {
 
             ShowSeat showSeat = ShowSeat.builder()
                     .foodIncluded(false)
-                    .isAvailable(false)
+                    .isAvailable(true)
                     .show(show)
                     .seatNumber(seatNumber)
                     .seatType(seatType)
@@ -71,8 +75,9 @@ public class ShowService {
             }
             showSeatsList.add(showSeat);
         }
-        show.setShowSeatsList(showSeatsList);
-        showRepository.save(show);
+//        show.setShowSeatsList(showSeatsList);
+//        showRepository.save(show);
+        showSeatRepository.saveAll(showSeatsList);
         return "Show Seats added successfully for showId: "+show.getShowId();
     }
 }

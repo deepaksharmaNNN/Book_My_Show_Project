@@ -47,7 +47,7 @@ public class TicketService {
 
         show.getTickets().add(ticket);
         ticketRepository.save(ticket);
-        return "Ticket booked successfully" + ticket.getTicketId();
+        return "Ticket booked successfully: " + ticket.getTicketId();
     }
     private String generateBookedSeats(List<String> bookedSeats){
         return bookedSeats.toString();
