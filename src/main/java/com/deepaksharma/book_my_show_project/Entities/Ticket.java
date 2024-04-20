@@ -27,4 +27,9 @@ public class Ticket {
     @ManyToOne
     @JsonIgnore
     private Show show;
+
+    @JoinColumn
+    @ManyToOne
+    @JsonIgnore
+    private User user;
 }
