@@ -1,5 +1,6 @@
 package com.deepaksharma.book_my_show_project.Entities;
 
+import com.deepaksharma.book_my_show_project.Enums.Availability;
 import com.deepaksharma.book_my_show_project.Enums.SeatType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -20,7 +21,8 @@ public class ShowSeat {
 
     private Integer price;
 
-    private Boolean isAvailable;
+    @Enumerated(value = EnumType.STRING)
+    private Availability isAvailable;
 
     private Boolean foodIncluded;
 

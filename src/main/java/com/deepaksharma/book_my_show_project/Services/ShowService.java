@@ -3,6 +3,7 @@ package com.deepaksharma.book_my_show_project.Services;
 import com.deepaksharma.book_my_show_project.CustomException.InvalidMovieException;
 import com.deepaksharma.book_my_show_project.CustomException.InvalidTheaterException;
 import com.deepaksharma.book_my_show_project.Entities.*;
+import com.deepaksharma.book_my_show_project.Enums.Availability;
 import com.deepaksharma.book_my_show_project.Enums.SeatType;
 import com.deepaksharma.book_my_show_project.Repository.MovieRepository;
 import com.deepaksharma.book_my_show_project.Repository.ShowRepository;
@@ -63,7 +64,7 @@ public class ShowService {
 
             ShowSeat showSeat = ShowSeat.builder()
                     .foodIncluded(false)
-                    .isAvailable(true)
+                    .isAvailable(Availability.TRUE)
                     .show(show)
                     .seatNumber(seatNumber)
                     .seatType(seatType)
