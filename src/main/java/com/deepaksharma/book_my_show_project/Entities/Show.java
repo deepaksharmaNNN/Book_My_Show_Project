@@ -1,5 +1,6 @@
 package com.deepaksharma.book_my_show_project.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,10 +27,12 @@ public class Show {
 
     @JoinColumn
     @ManyToOne
+    @JsonIgnore
     private Movie movie;
 
     @JoinColumn
     @ManyToOne
+    @JsonIgnore
     private Theater theater;
 
     @OneToMany(mappedBy = "show", cascade = CascadeType.ALL)
